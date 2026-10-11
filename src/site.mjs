@@ -18,7 +18,7 @@ export const site = {
   accroche: 'Votre interlocuteur unique pour une rénovation clés en main',
   sousTitre: 'Particuliers et professionnels',
   presentation:
-    "MLS TRAVAUX est une entreprise de rénovation et de travaux du bâtiment. Basés près de Villefranche-sur-Saône, nous intervenons dans tout le Beaujolais, la région Lyonnaise, le Val de Saône, le Rhône et l'Ain. Climatisation, chauffage et pompe à chaleur, plâtrerie, isolation, peinture, plomberie, électricité : nous intégrons tous les corps de métier de votre chantier, en neuf comme en rénovation, de la première visite à la remise des clés.",
+    "MLS TRAVAUX est une entreprise de rénovation et de travaux du bâtiment. Basés près de Villefranche-sur-Saône, nous intervenons généralement dans tout le Beaujolais, la région Lyonnaise, le Val de Saône, le Rhône et l'Ain, et en déplacement dans toute la France pour vos projets. Climatisation, chauffage et pompe à chaleur, plâtrerie, isolation, peinture, plomberie, électricité : nous intégrons tous les corps de métier de votre chantier, en neuf comme en rénovation, de la première visite à la remise des clés.",
   zoneAffichee: ['Beaujolais', 'Région Lyonnaise', 'Val de Saône', 'Rhône', 'Ain'],
   // Communes desservies : données structurées (areaServed) + rubrique discrète de la page L'entreprise.
   communes: [
@@ -37,7 +37,7 @@ export const partenaires = [
   { nom: 'Calade Parquet', url: 'https://calade-parquet.fr/', metier: 'Revêtements de sols intérieurs et extérieurs', logo: 'calade-parquet.svg' },
   { nom: 'Mat & Brillant', url: 'https://www.matetbrillant.fr/', metier: 'Peintures, revêtements de sols et murs, papiers peints', logo: 'mat-et-brillant.png' },
   { nom: 'Téréva', url: 'https://www.tereva.fr/', metier: 'Sanitaire, plomberie et chauffage', logo: 'tereva.png' },
-  { nom: 'Point.P', url: 'https://www.pointp.fr/', metier: 'Matériaux de construction', logo: '' },
+  { nom: 'Point.P', url: 'https://www.pointp.fr/', metier: 'Matériaux de construction', logo: 'point-p.jpg' },
 ];
 
 // Couleur de chaque famille de métiers (charte : carreaux du logo).

@@ -330,3 +330,4 @@ fieldset.field { border: 0; padding: 0; margin: 0; }
 .partenaires .lien-fleche { color: var(--bleu); margin-top: 6px; }
 @media (max-width: 900px) { .partenaires { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .partenaires { grid-template-columns: 1fr; } }
+.partenaires .logo img[src$="point-p.jpg"] { height: 88px; }
