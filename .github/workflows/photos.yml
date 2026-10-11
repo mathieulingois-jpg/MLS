@@ -3,7 +3,7 @@ name: Photos
 on:
   push:
     branches: [photos-candidats]
-    paths: [photos/candidats.txt]
+    paths: [photos/candidats.txt, photos/logos.txt]
   workflow_dispatch:
 permissions:
   contents: write
@@ -22,10 +22,12 @@ jobs:
             curl -fsSL "https://images.unsplash.com/photo-${id}?w=1600&q=80&fm=jpg&fit=max" -o "$f" || echo "échec $id"
           done < photos/candidats.txt
           ls -la photos/candidats | head -100
+      - name: Logos des fournisseurs
+        run: python3 photos/logos.py | tee photos/logos/journal.txt
       - name: Enregistrer
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add photos/candidats
+          git add photos/candidats photos/logos
           git commit -m "Photos candidates téléchargées" || exit 0
           git push
