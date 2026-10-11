@@ -13,6 +13,7 @@ mkdirSync(out, { recursive: true });
 
 const builders = [
   P.accueil,
+  P.nosServices,
   ...services.map((s) => (ctx) => P.servicePage(ctx, s)),
   P.professionnels,
   P.realisations,

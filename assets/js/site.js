@@ -1,31 +1,5 @@
-// MLS TRAVAUX : menu mobile, sous-menu Services, formulaire de devis.
+// MLS TRAVAUX : formulaire de devis.
 (function () {
-  var toggle = document.querySelector('.menu-toggle');
-  var nav = document.getElementById('nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.textContent = open ? 'Fermer' : 'Menu';
-      document.body.classList.toggle('nav-open', open);
-    });
-  }
-  document.querySelectorAll('.sub-toggle').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var li = btn.closest('.has-sub');
-      var open = li.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  });
-  document.addEventListener('click', function (e) {
-    document.querySelectorAll('.has-sub.open').forEach(function (li) {
-      if (!li.contains(e.target) && window.matchMedia('(min-width: 1061px)').matches) {
-        li.classList.remove('open');
-        li.querySelector('.sub-toggle').setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
   // Formulaire : type de travaux pré-rempli depuis l'adresse (#climatisation, #peinture...)
   var form = document.getElementById('devis');
   if (!form) return;

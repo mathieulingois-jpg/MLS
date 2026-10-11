@@ -107,11 +107,10 @@ function header(ctx, current) {
       <img src="${ctx.asset('img/logo-96.png')}" width="96" height="82" alt="">
       <span>MLS TRAVAUX</span>
     </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Menu principal">
       <ul>
         ${item('', 'Accueil')}
-        <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false">Nos services</button><ul class="sub">${sub}</ul></li>
+        <li class="has-sub"><a class="sub-toggle" href="${ctx.url('nos-services/')}"${current === 'nos-services/' ? ' aria-current="page"' : ''}>Nos services</a><ul class="sub">${sub}</ul></li>
         ${item('professionnels/', 'Professionnels')}
         ${item('realisations/', 'Réalisations')}
         ${item('entreprise/', "L'entreprise")}

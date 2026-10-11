@@ -226,7 +226,7 @@ export function servicePage(ctx, s) {
 <section class="page-head">
   <div class="wrap svc-hero">
     <div class="stack">
-      <nav class="fil" aria-label="Fil d'Ariane"><ol><li><a href="${ctx.url('')}">Accueil</a></li><li>Nos services</li><li aria-current="page">${esc(s.nom)}</li></ol></nav>
+      <nav class="fil" aria-label="Fil d'Ariane"><ol><li><a href="${ctx.url('')}">Accueil</a></li><li><a href="${ctx.url('nos-services/')}">Nos services</a></li><li aria-current="page">${esc(s.nom)}</li></ol></nav>
       <span class="eyebrow tag-metier"><span class="dot c-${s.couleur}"></span>${esc(s.nom)}</span>
       <h1>${esc(s.h1)}</h1>
       ${s.intro.map((p, i) => `<p${i === 0 ? ' class="lead"' : ' class="muted"'}>${esc(p)}</p>`).join('')}
@@ -382,7 +382,7 @@ export function entreprise(ctx) {
       <span class="eyebrow">Nos métiers</span>
       <h2>Tous les corps d'état réunis</h2>
       <p>Climatisation et chauffage, plâtrerie, isolation, peinture, plomberie, électricité, mais aussi cuisines, carrelage, menuiseries et panneaux solaires. Ces métiers travaillent ensemble sur vos chantiers, en neuf comme en rénovation.</p>
-      <p><a class="lien-fleche" href="${ctx.url('#services')}">Voir tous nos services</a></p>
+      <p><a class="lien-fleche" href="${ctx.url('nos-services/')}">Voir tous nos services</a></p>
     </div>
     <div class="prose">
       <span class="eyebrow">Zone d'intervention</span>
@@ -562,6 +562,36 @@ export function notFound(ctx) {
   <p class="lead">Elle a peut-être été déplacée. Retrouvez nos services depuis l'accueil, ou contactez-nous directement.</p>
   <div class="btns"><a class="btn btn-p" href="${ctx.url('')}">Retour à l'accueil</a>${telLink('btn btn-s')}</div>
 </div></section>
+`,
+  };
+}
+
+// ---------- Nos services (page liste) ----------
+export function nosServices(ctx) {
+  const [clim, ...rest] = services;
+  return {
+    path: 'nos-services/',
+    title: "Nos services | Rénovation tous corps d'état | MLS TRAVAUX",
+    description:
+      "Climatisation, chauffage, plâtrerie, isolation, peinture, plomberie, électricité, cuisines, carrelage, menuiseries, panneaux solaires à Villefranche-sur-Saône.",
+    current: 'nos-services/',
+    body: `
+<section class="page-head">
+  <div class="wrap stack">
+    <span class="eyebrow eyebrow-lg">Nos services</span>
+    <h1>Tous les travaux de votre rénovation</h1>
+    <p class="lead">Neuf ou rénovation, maison, appartement ou local professionnel : nous intégrons tous les métiers de votre chantier, avec un seul interlocuteur, à Villefranche-sur-Saône, dans le Beaujolais et la région Lyonnaise.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="svc-grid">
+      ${svcCard(ctx, clim, true)}
+      ${rest.map((s) => svcCard(ctx, s)).join('\n')}
+    </div>
+  </div>
+</section>
+${ctaBand(ctx)}
 `,
   };
 }

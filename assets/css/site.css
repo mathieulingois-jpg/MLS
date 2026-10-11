@@ -79,30 +79,27 @@ ul { margin: 0; }
 .nav a[aria-current="page"] { color: var(--bleu); }
 .nav .btn { padding: 11px 18px; font-size: .78rem; letter-spacing: .1em; color: var(--blanc); }
 .nav .btn:hover { color: var(--blanc); }
-.sub-toggle { background: none; border: 0; padding: 8px 0; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.sub-toggle { padding: 8px 0; display: inline-flex; align-items: center; gap: 6px; }
 .sub-toggle::after { content: ""; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px); }
 .has-sub { position: relative; }
 .sub { list-style: none; margin: 0; padding: 10px; position: absolute; top: calc(100% + 10px); left: -20px; width: 300px; background: var(--blanc); border: 1px solid var(--trait); border-radius: var(--r); box-shadow: 0 18px 40px -18px rgba(46, 53, 56, .35); display: none; }
-.has-sub.open .sub { display: grid; }
 @media (hover: hover) and (min-width: 1061px) { .has-sub:hover .sub, .has-sub:focus-within .sub { display: grid; } .has-sub::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 14px; } }
 .sub a { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 4px; text-transform: none; letter-spacing: .01em; font-size: .95rem; }
 .sub a:hover { background: var(--pierre); color: var(--encre); }
 .sub .dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
 .sub li.sep { border-top: 1px solid var(--trait); margin: 6px 4px; }
-.menu-toggle { display: none; margin-left: auto; background: none; border: 1px solid var(--trait); border-radius: 4px; padding: 10px 12px; font: 600 .78rem/1 var(--f-texte); letter-spacing: .12em; text-transform: uppercase; color: var(--encre); cursor: pointer; }
 
+/* Menu toujours visible en ligne (demande de Mathieu, 11/10) : sur écran étroit, il passe sous le logo, sur une ou deux lignes. */
+@media (max-width: 1180px) { .nav > ul { gap: 18px; } .nav a, .nav .sub-toggle { letter-spacing: .1em; } }
 @media (max-width: 1060px) {
-  .menu-toggle { display: inline-flex; }
-  .nav { position: fixed; inset: 76px 0 0 0; background: var(--papier); overflow-y: auto; padding: 16px var(--gouttiere) 40px; display: none; margin: 0; }
-  .nav.open { display: block; }
-  .nav > ul { flex-direction: column; align-items: stretch; gap: 0; }
-  .nav > ul > li { border-bottom: 1px solid var(--trait); }
-  .nav > ul > li > a, .nav .sub-toggle { display: flex; width: 100%; justify-content: space-between; padding: 18px 0; font-size: .85rem; }
-  .sub { position: static; width: auto; box-shadow: none; border: 0; padding: 0 0 12px; background: transparent; }
-  .nav li.cta { border: 0; padding-top: 20px; }
-  .nav li.cta .btn { width: 100%; padding: 16px; justify-content: center; }
-  body.nav-open { overflow: hidden; }
+  .site-header .wrap { flex-wrap: wrap; gap: 4px 24px; padding-block: 10px 0; min-height: 0; }
+  .nav { margin: 0; width: 100%; border-top: 1px solid var(--trait); }
+  .nav > ul { flex-wrap: wrap; gap: 2px 20px; padding-block: 8px; }
+  .nav a, .nav .sub-toggle { font-size: .74rem; white-space: nowrap; }
+  .nav .sub-toggle::after { display: none; }
+  .nav .btn { padding: 8px 14px; font-size: .72rem; }
 }
+@media (max-width: 600px) { .nav > ul { justify-content: center; gap: 0 16px; } .nav a, .nav .sub-toggle { padding: 9px 0; } .nav li.cta { flex-basis: 100%; display: flex; justify-content: center; padding-top: 4px; } .site-header .wrap { justify-content: center; } }
 @media (max-width: 420px) { .brand span { font-size: 1.2rem; } .brand img { width: 40px; } }
 
 /* Photos d'illustration en attente (remplacées par de vraies photos) */
@@ -317,3 +314,4 @@ fieldset.field { border: 0; padding: 0; margin: 0; }
 .aussi ul { grid-template-columns: 1fr; }
 @media (max-width: 900px) { .svc-grid .aussi { grid-column: span 2; } }
 @media (max-width: 600px) { .svc-grid .aussi { grid-column: auto; } }
+@media (max-width: 600px) { .site-header { position: static; } }
