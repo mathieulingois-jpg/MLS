@@ -3,7 +3,7 @@ name: Photos
 on:
   push:
     branches: [photos-candidats]
-    paths: [photos/candidats.txt, photos/logos.txt]
+    paths: [photos/candidats.txt, photos/logos.txt, photos/telechargements.txt]
   workflow_dispatch:
 permissions:
   contents: write
@@ -24,6 +24,12 @@ jobs:
           ls -la photos/candidats | head -100
       - name: Logos des fournisseurs
         run: python3 photos/logos.py | tee photos/logos/journal.txt
+      - name: Téléchargements directs
+        run: |
+          while read -r f u; do
+            [ -z "$u" ] && continue
+            curl -fsSL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36" -H "Accept: image/avif,image/webp,image/*,*/*" -e "https://www.google.com/" "$u" -o "photos/logos/$f" && echo "ok $f" || echo "échec $f"
+          done < photos/telechargements.txt
       - name: Enregistrer
         run: |
           git config user.name "github-actions[bot]"

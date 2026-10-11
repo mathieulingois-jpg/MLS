@@ -1,0 +1,4 @@
+point-p-1.png https://www.pointp.fr/sites/default/files/logo/logo_PP_nouv.png
+point-p-2.png https://www.pointp.fr/_next/image?url=https%3A%2F%2Fwww.pointp.fr%2Fsites%2Fdefault%2Ffiles%2Flogo%2Flogo_PP_nouv.png&w=640&q=90
+point-p-3.svg https://upload.wikimedia.org/wikipedia/commons/7/7e/Point.P_logo.svg
+point-p-4.png https://logo.clearbit.com/pointp.fr
