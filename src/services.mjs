@@ -749,7 +749,7 @@ export const services = [
     form: 'solaire',
     groupe: 3,
     couleur: 'jaune',
-    court: 'Installation photovoltaïque pour produire votre électricité.',
+    court: 'Installation photovoltaïque et stockage physique ou virtuel.',
     photo: "Panneaux solaires posés sur un toit en tuiles",
     title: 'Installation panneaux solaires Villefranche-sur-Saône | MLS',
     description:
