@@ -325,7 +325,7 @@ fieldset.field { border: 0; padding: 0; margin: 0; }
 .partenaires .logo { height: 120px; display: grid; place-items: center; border-bottom: 1px solid var(--pierre); margin-bottom: 10px; padding: 10px; }
 .partenaires .logo img { height: 64px; max-width: 85%; width: auto; object-fit: contain; }
 .partenaires .logo-txt { font: 700 1.5rem/1.1 var(--f-titre); letter-spacing: .04em; text-align: center; }
-.partenaires .nom { font: 600 1.35rem/1.2 var(--f-titre); }
+.partenaires .nom { font: 700 1.2rem/1.25 var(--f-texte); letter-spacing: .01em; }
 .partenaires .metier { font-size: .92rem; color: var(--encre-2); }
 .partenaires .lien-fleche { color: var(--bleu); margin-top: 6px; }
 @media (max-width: 900px) { .partenaires { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
