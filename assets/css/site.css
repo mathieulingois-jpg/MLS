@@ -180,7 +180,7 @@ ul { margin: 0; }
 
 /* Appel à l'action */
 .cta-band .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 40px; }
-.cta-band h2 { max-width: 18ch; }
+.cta-band h2 { max-width: none; }
 .cta-band .tel { font: 600 1.6rem/1 var(--f-titre); color: var(--papier); text-decoration: none; letter-spacing: .03em; }
 
 /* Pages intérieures */
