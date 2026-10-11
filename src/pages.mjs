@@ -80,8 +80,9 @@ function svcCard(ctx, s, feat = false) {
 
 function grilleServices(ctx) {
   const [clim, ...rest] = services;
-  const grands = rest.filter((s) => s.groupe === 2);
-  const autres = rest.filter((s) => s.groupe === 3);
+  // Sur l'accueil, les panneaux solaires ont leur propre carte (demande de Mathieu, 11/10).
+  const grands = rest.filter((s) => s.groupe === 2 || s.form === 'solaire');
+  const autres = rest.filter((s) => s.groupe === 3 && s.form !== 'solaire');
   return `<div class="svc-grid">
   ${svcCard(ctx, clim, true)}
   ${grands.map((s) => svcCard(ctx, s)).join('\n')}
@@ -112,18 +113,18 @@ ${photo(ctx, 'accueil', 'Séjour lumineux entièrement rénové', 'hero-photo', 
     <span class="eyebrow">Entreprise de rénovation · Villefranche-sur-Saône · Beaujolais</span>
     <h1>Votre interlocuteur unique pour une rénovation <em>clés en main</em></h1>
     <p class="sous">${esc(site.sousTitre)}</p>
+    <p class="intro">${esc(site.presentation)}</p>
     <ul class="cascade" aria-label="Nos principaux métiers">${[
       ['Climatisation', 'climatisation-villefranche-sur-saone', 'bleu'],
-      ['Chauffage · Pompe à chaleur', 'climatisation-villefranche-sur-saone', 'bleu'],
-      ['Plâtrerie', 'platrerie-villefranche-sur-saone', 'vert'],
+      ['Chauffage – Pompe à chaleur', 'climatisation-villefranche-sur-saone', 'bleu'],
+      ['Plâtrerie – Peinture', 'platrerie-villefranche-sur-saone', 'vert'],
       ['Isolation', 'isolation-villefranche-sur-saone', 'vert'],
-      ['Peinture', 'peintre-villefranche-sur-saone', 'vert'],
       ['Plomberie', 'plombier-villefranche-sur-saone', 'magenta'],
       ['Électricité', 'electricien-villefranche-sur-saone', 'bleu'],
+      ['Panneaux solaires', 'panneaux-solaires-villefranche-sur-saone', 'jaune'],
     ]
       .map(([n, slug, c], i) => `<li style="--i:${i}"><a href="${ctx.url(slug + '/')}"><span class="dot c-${c}"></span>${n}</a></li>`)
       .join('')}</ul>
-    <p class="intro">${esc(site.presentation)}</p>
     <div class="btns"><a class="btn btn-p" href="${ctx.url('contact/')}">Demander un devis</a>${telLink('btn btn-s').replace(site.telephone + '<', 'Appeler<')}</div>
   </div>
   ${stripeFull}
@@ -131,14 +132,14 @@ ${photo(ctx, 'accueil', 'Séjour lumineux entièrement rénové', 'hero-photo', 
 
 <section class="section" id="services">
   <div class="wrap">
-    <div class="sec-head center"><span class="eyebrow">Nos services</span><h2>Tous les travaux de votre rénovation</h2><p>Neuf ou rénovation, maison, appartement ou local professionnel : nous intégrons tous les métiers de votre chantier, avec un seul interlocuteur.</p></div>
+    <div class="sec-head center"><span class="eyebrow eyebrow-lg">Nos services</span><h2>Tous les travaux de votre rénovation</h2><p>Neuf ou rénovation, maison, appartement ou local professionnel : nous intégrons tous les métiers de votre chantier, avec un seul interlocuteur.</p></div>
     ${grilleServices(ctx)}
   </div>
 </section>
 
 <section class="section section-ardoise on-dark">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Pourquoi MLS TRAVAUX</span><h2>Une seule entreprise pour tout votre chantier</h2></div>
+    <div class="sec-head"><h2 class="titre-xl">Pourquoi MLS TRAVAUX ?</h2><p class="sous-titre">Une seule entreprise pour tout votre chantier</p></div>
     <div class="args">${args
       .map(([ic, c, t, p]) => `<div class="arg c-${c}">${ICONES[ic]}<h3>${t}</h3><p>${p}</p></div>`)
       .join('')}</div>
