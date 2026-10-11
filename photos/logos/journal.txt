@@ -24,7 +24,7 @@ ok tereva 10 https://groupe-mb.scene7.com/is/image/groupemb/logo%2DTHERMANCE%2D2
 ok tereva 11 https://groupe-mb.scene7.com/is/image/groupemb/trophy%2Dregular%5Fblanc2?$logo$ 686
 ECHEC page point-p HTTP Error 403: Forbidden
 ok point-p-wiki 0 https://fr.wikipedia.org/static/apple-touch/wikipedia.png 1313
-ok point-p-wiki 1 https://fr.wikipedia.org/wiki/Fichier:Logo_Saint-Gobain.png 72747
+ok point-p-wiki 1 https://fr.wikipedia.org/wiki/Fichier:Logo_Saint-Gobain.png 72967
 ok point-p-wiki 2 https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Circle-icons-material-logo.svg/40px-Circle-icons-material-logo.svg.png?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail 2617
 ok point-p-wiki 3 https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Circle-icons-material-logo.svg/60px-Circle-icons-material-logo.svg.png?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail 4100
 ok point-p-wiki 4 https://thumb.wikimedia.org/wikipedia/fr/thumb/e/e3/Logo_Saint-Gobain.png/250px-Logo_Saint-Gobain.png?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail 9719
