@@ -30,5 +30,15 @@ export const site = {
   web3formsKey: '',
 };
 
+// Partenaires (fournisseurs) : page /partenaires/. logo = fichier dans assets/img/partenaires/ (vide = nom en texte).
+export const partenaires = [
+  { nom: 'Comptoir des Fers', url: 'https://www.comptoirdesfers.com/', metier: 'Salle de bains, chauffage et climatisation', logo: 'comptoir-des-fers.svg' },
+  { nom: 'Foussier', url: 'https://www.foussier.fr/', metier: 'Quincaillerie professionnelle et outillage', logo: 'foussier.svg' },
+  { nom: 'Calade Parquet', url: 'https://calade-parquet.fr/', metier: 'Revêtements de sols intérieurs et extérieurs', logo: 'calade-parquet.svg' },
+  { nom: 'Mat & Brillant', url: 'https://www.matetbrillant.fr/', metier: 'Peintures, revêtements de sols et murs, papiers peints', logo: 'mat-et-brillant.png' },
+  { nom: 'Téréva', url: 'https://www.tereva.fr/', metier: 'Sanitaire, plomberie et chauffage', logo: 'tereva.png' },
+  { nom: 'Point.P', url: 'https://www.pointp.fr/', metier: 'Matériaux de construction', logo: '' },
+];
+
 // Couleur de chaque famille de métiers (charte : carreaux du logo).
 export const couleurs = { bleu: '#0A72BA', vert: '#8BC43F', magenta: '#E5237A', jaune: '#F8C81E' };

@@ -18,6 +18,7 @@ const builders = [
   P.professionnels,
   P.realisations,
   P.entreprise,
+  P.pagePartenaires,
   P.contact,
   P.mentions,
   P.confidentialite,

@@ -1,5 +1,5 @@
 // Contenu des pages : accueil, services, professionnels, entreprise, contact, réalisations, pages légales.
-import { site } from './site.mjs';
+import { site, partenaires } from './site.mjs';
 import { services, metiers, serviceBySlug } from './services.mjs';
 import { esc, photo, telLink, stripeFull, stripeSmall } from './layout.mjs';
 
@@ -590,6 +590,41 @@ export function nosServices(ctx) {
       ${rest.map((s) => svcCard(ctx, s)).join('\n')}
       <div class="aussi"><h3>Un autre projet ?</h3><p class="muted">Vous ne trouvez pas vos travaux dans la liste, ou vous rénovez tout un logement ? Parlons-en : nous intégrons tous les corps de métier.</p><p><a class="lien-fleche" href="${ctx.url('renovation-cle-en-main/')}">La rénovation clé en main</a></p><p><a class="lien-fleche" href="${ctx.url('contact/')}">Nous décrire votre projet</a></p></div>
     </div>
+  </div>
+</section>
+${ctaBand(ctx)}
+`,
+  };
+}
+
+// ---------- Partenaires ----------
+export function pagePartenaires(ctx) {
+  return {
+    path: 'partenaires/',
+    title: 'Nos partenaires fournisseurs | MLS TRAVAUX',
+    description:
+      'Les fournisseurs de MLS TRAVAUX : matériaux, quincaillerie, sanitaire, chauffage, peintures et parquets de qualité professionnelle.',
+    current: 'partenaires/',
+    body: `
+<section class="page-head">
+  <div class="wrap stack">
+    <span class="eyebrow eyebrow-lg">Partenaires</span>
+    <h1>Nos partenaires fournisseurs</h1>
+    <p class="lead">Pour vos chantiers, nous travaillons avec des fournisseurs reconnus du bâtiment, qui nous livrent des matériaux et des équipements de qualité professionnelle.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <ul class="partenaires">${partenaires
+      .map(
+        (p) => `<li><a href="${p.url}" target="_blank" rel="noopener" aria-label="${esc(p.nom)} (site du fournisseur, nouvel onglet)">
+          <span class="logo">${p.logo ? `<img src="${ctx.asset('img/partenaires/' + p.logo)}" alt="${esc(p.nom)}" loading="lazy">` : `<span class="logo-txt">${esc(p.nom)}</span>`}</span>
+          <span class="nom">${esc(p.nom)}</span>
+          <span class="metier">${esc(p.metier)}</span>
+          <span class="lien-fleche">Voir le site</span>
+        </a></li>`,
+      )
+      .join('')}</ul>
   </div>
 </section>
 ${ctaBand(ctx)}

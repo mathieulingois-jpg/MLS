@@ -114,6 +114,7 @@ function header(ctx, current) {
         ${item('professionnels/', 'Professionnels')}
         ${item('realisations/', 'Réalisations')}
         ${item('entreprise/', "L'entreprise")}
+        ${item('partenaires/', 'Partenaires')}
         <li class="cta"><a class="btn btn-p" href="${ctx.url('contact/')}">Devis gratuit</a></li>
       </ul>
     </nav>
@@ -140,6 +141,7 @@ function footer(ctx) {
         <li><a href="${ctx.url('entreprise/')}">L'entreprise</a></li>
         <li><a href="${ctx.url('renovation-cle-en-main/')}">Rénovation clé en main</a></li>
         <li><a href="${ctx.url('realisations/')}">Réalisations</a></li>
+        <li><a href="${ctx.url('partenaires/')}">Partenaires</a></li>
         <li><a href="${ctx.url('contact/')}">Demander un devis</a></li>
         <li><a href="${ctx.url('mentions-legales/')}">Mentions légales</a></li>
         <li><a href="${ctx.url('confidentialite/')}">Confidentialité</a></li>
