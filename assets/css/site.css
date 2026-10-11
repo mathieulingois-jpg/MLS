@@ -150,8 +150,8 @@ ul { margin: 0; }
 .aussi { grid-column: span 2; background: var(--blanc); border: 1px solid var(--trait); border-top: 4px solid var(--jaune); border-radius: var(--r); padding: 22px 24px; display: grid; gap: 14px; align-content: start; }
 .aussi h3 { font-size: 1.45rem; }
 .aussi ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 24px; }
-.aussi a { display: flex; align-items: center; gap: 10px; padding: 8px 0; color: var(--encre); text-decoration: none; border-bottom: 1px solid var(--pierre); font-weight: 500; }
-.aussi a:hover { color: var(--bleu); }
+.aussi li a { display: flex; align-items: center; gap: 10px; padding: 8px 0; color: var(--encre); text-decoration: none; border-bottom: 1px solid var(--pierre); font-weight: 500; }
+.aussi li a:hover { color: var(--bleu); }
 .dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; display: inline-block; }
 .c-bleu { --c: var(--bleu); } .c-vert { --c: var(--vert); } .c-magenta { --c: var(--magenta); } .c-jaune { --c: var(--jaune); }
 .dot.c-bleu, .dot.c-vert, .dot.c-magenta, .dot.c-jaune { background: var(--c); }
@@ -296,7 +296,7 @@ fieldset.field { border: 0; padding: 0; margin: 0; }
 .galerie { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .galerie .ph { aspect-ratio: 3 / 2; border-radius: var(--r); }
 @media (max-width: 700px) { .galerie { grid-template-columns: 1fr; } }
-.aussi a img { width: 64px; height: 48px; object-fit: cover; border-radius: 3px; flex-shrink: 0; }
+.aussi li a img { width: 64px; height: 48px; object-fit: cover; border-radius: 3px; flex-shrink: 0; }
 
 /* Accueil : les métiers en cascade, sous le sous-titre */
 .cascade { list-style: none; padding: 0; margin: 6px 0 4px; display: grid; gap: 6px; justify-items: start; text-align: left; --pas: clamp(14px, 3.4vw, 34px); }

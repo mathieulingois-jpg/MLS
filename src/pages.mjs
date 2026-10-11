@@ -1,6 +1,6 @@
 // Contenu des pages : accueil, services, professionnels, entreprise, contact, réalisations, pages légales.
 import { site } from './site.mjs';
-import { services, serviceBySlug } from './services.mjs';
+import { services, metiers, serviceBySlug } from './services.mjs';
 import { esc, photo, telLink, stripeFull, stripeSmall } from './layout.mjs';
 
 const ICONES = {
@@ -79,7 +79,7 @@ function svcCard(ctx, s, feat = false) {
 }
 
 function grilleServices(ctx) {
-  const [clim, ...rest] = services;
+  const [clim, ...rest] = metiers;
   // Sur l'accueil, les panneaux solaires ont leur propre carte (demande de Mathieu, 11/10).
   const grands = rest.filter((s) => s.groupe === 2 || s.form === 'solaire');
   const autres = rest.filter((s) => s.groupe === 3 && s.form !== 'solaire');
@@ -141,7 +141,7 @@ ${photo(ctx, 'accueil', 'Séjour lumineux entièrement rénové', 'hero-photo', 
   <div class="wrap">
     <div class="sec-head"><h2 class="titre-xl">Pourquoi MLS TRAVAUX ?</h2><p class="sous-titre">Une seule entreprise pour tout votre chantier</p></div>
     <div class="args">${args
-      .map(([ic, c, t, p]) => `<div class="arg c-${c}">${ICONES[ic]}<h3>${t}</h3><p>${p}</p></div>`)
+      .map(([ic, c, t, p]) => `<div class="arg c-${c}">${ICONES[ic]}<h3>${t}</h3><p>${p}</p>${ic === 'cle' ? `<a class="lien-fleche" style="color:var(--papier)" href="${ctx.url('renovation-cle-en-main/')}">La rénovation clé en main</a>` : ''}</div>`)
       .join('')}</div>
   </div>
 </section>
@@ -226,7 +226,7 @@ export function servicePage(ctx, s) {
 <section class="page-head">
   <div class="wrap svc-hero">
     <div class="stack">
-      <nav class="fil" aria-label="Fil d'Ariane"><ol><li><a href="${ctx.url('')}">Accueil</a></li><li><a href="${ctx.url('nos-services/')}">Nos services</a></li><li aria-current="page">${esc(s.nom)}</li></ol></nav>
+      <nav class="fil" aria-label="Fil d'Ariane"><ol><li><a href="${ctx.url('')}">Accueil</a></li>${s.slug === 'renovation-cle-en-main' ? '' : `<li><a href="${ctx.url('nos-services/')}">Nos services</a></li>`}<li aria-current="page">${esc(s.nom)}</li></ol></nav>
       <span class="eyebrow tag-metier"><span class="dot c-${s.couleur}"></span>${esc(s.nom)}</span>
       <h1>${esc(s.h1)}</h1>
       ${s.intro.map((p, i) => `<p${i === 0 ? ' class="lead"' : ' class="muted"'}>${esc(p)}</p>`).join('')}
@@ -568,7 +568,7 @@ export function notFound(ctx) {
 
 // ---------- Nos services (page liste) ----------
 export function nosServices(ctx) {
-  const [clim, ...rest] = services;
+  const [clim, ...rest] = metiers;
   return {
     path: 'nos-services/',
     title: "Nos services | Rénovation tous corps d'état | MLS TRAVAUX",
@@ -588,6 +588,7 @@ export function nosServices(ctx) {
     <div class="svc-grid">
       ${svcCard(ctx, clim, true)}
       ${rest.map((s) => svcCard(ctx, s)).join('\n')}
+      <div class="aussi"><h3>Un autre projet ?</h3><p class="muted">Vous ne trouvez pas vos travaux dans la liste, ou vous rénovez tout un logement ? Parlons-en : nous intégrons tous les corps de métier.</p><p><a class="lien-fleche" href="${ctx.url('renovation-cle-en-main/')}">La rénovation clé en main</a></p><p><a class="lien-fleche" href="${ctx.url('contact/')}">Nous décrire votre projet</a></p></div>
     </div>
   </div>
 </section>

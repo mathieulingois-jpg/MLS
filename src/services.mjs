@@ -801,4 +801,7 @@ export const services = [
   },
 ];
 
+// Les métiers listés dans « Nos services » : la rénovation clé en main n'est pas un métier, elle a sa page à part (Mathieu, 11/10).
+export const metiers = services.filter((s) => s.slug !== 'renovation-cle-en-main');
+
 export const serviceBySlug = Object.fromEntries(services.map((s) => [s.slug, s]));

@@ -1,6 +1,6 @@
 // Gabarit commun : <head>, en-tête, menu, pied de page.
 import { site } from './site.mjs';
-import { services } from './services.mjs';
+import { services, metiers } from './services.mjs';
 import { photos } from './photos.mjs';
 
 export const esc = (s) =>
@@ -92,7 +92,7 @@ export function businessJsonLd() {
 }
 
 function header(ctx, current) {
-  const sub = services
+  const sub = metiers
     .map(
       (s, i) =>
         (i === 6 ? '<li class="sep" aria-hidden="true"></li>' : '') +
@@ -122,8 +122,8 @@ function header(ctx, current) {
 }
 
 function footer(ctx) {
-  const main = services.filter((s) => s.groupe <= 2);
-  const autres = services.filter((s) => s.groupe === 3);
+  const main = metiers.filter((s) => s.groupe <= 2);
+  const autres = metiers.filter((s) => s.groupe === 3);
   const li = (s) => `<li><a href="${ctx.url(s.slug + '/')}">${esc(s.menu)}</a></li>`;
   return `<footer class="site-footer">
   ${stripeFull}
@@ -138,6 +138,7 @@ function footer(ctx) {
       <div><h2>Et aussi</h2><ul>${autres.map(li).join('')}<li><a href="${ctx.url('professionnels/')}">Professionnels</a></li></ul></div>
       <div><h2>MLS TRAVAUX</h2><ul>
         <li><a href="${ctx.url('entreprise/')}">L'entreprise</a></li>
+        <li><a href="${ctx.url('renovation-cle-en-main/')}">Rénovation clé en main</a></li>
         <li><a href="${ctx.url('realisations/')}">Réalisations</a></li>
         <li><a href="${ctx.url('contact/')}">Demander un devis</a></li>
         <li><a href="${ctx.url('mentions-legales/')}">Mentions légales</a></li>
