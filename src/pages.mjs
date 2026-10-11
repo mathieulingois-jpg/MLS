@@ -73,7 +73,7 @@ function ctaBand(ctx, titre = 'Un projet ? Le devis est gratuit.', texte = 'Déc
 
 function svcCard(ctx, s, feat = false) {
   return `<a class="svc-card c-${s.couleur}${feat ? ' feat' : ''}" href="${ctx.url(s.slug + '/')}">
-  ${photo(s.photo, '', s.couleur)}
+  ${photo(ctx, s.form, s.photo, '', { sizes: feat ? '(max-width: 900px) 100vw, 40vw' : '(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw' })}
   <div class="tx"><h3>${esc(s.nom)}</h3><p>${esc(s.court)}</p><span class="lien-fleche">Découvrir</span></div>
 </a>`;
 }
@@ -86,7 +86,7 @@ function grilleServices(ctx) {
   ${svcCard(ctx, clim, true)}
   ${grands.map((s) => svcCard(ctx, s)).join('\n')}
   <div class="aussi"><h3>Et aussi</h3><ul>${autres
-    .map((s) => `<li><a href="${ctx.url(s.slug + '/')}"><span class="dot c-${s.couleur}"></span>${esc(s.nom)}</a></li>`)
+    .map((s) => `<li><a href="${ctx.url(s.slug + '/')}"><img src="${ctx.asset('img/photos/' + s.form + '-800.webp')}" width="64" height="48" alt="" loading="lazy"><span class="dot c-${s.couleur}"></span>${esc(s.nom)}</a></li>`)
     .join('')}</ul></div>
 </div>`;
 }
@@ -106,7 +106,7 @@ export function accueil(ctx) {
       "MLS TRAVAUX, entreprise de rénovation tous corps d'état à Villefranche-sur-Saône : climatisation, plâtrerie, isolation, peinture. Devis gratuit.",
     current: '',
     body: `
-${photo('Intérieur rénové lumineux, chantier MLS TRAVAUX', 'hero-photo')}
+${photo(ctx, 'accueil', 'Séjour lumineux entièrement rénové', 'hero-photo', { eager: true, sizes: '100vw' })}
 <section class="hero on-dark">
   <div class="wrap">
     <span class="eyebrow">Entreprise de rénovation · Villefranche-sur-Saône · Beaujolais</span>
@@ -220,7 +220,7 @@ export function servicePage(ctx, s) {
       ${s.intro.map((p, i) => `<p${i === 0 ? ' class="lead"' : ' class="muted"'}>${esc(p)}</p>`).join('')}
       <div class="btns"><a class="btn btn-p" href="${ctx.url('contact/#' + s.form)}">Demander un devis pour ${esc(s.nom.toLowerCase())}</a>${telLink('btn btn-s')}</div>
     </div>
-    ${photo(s.photo, '', s.couleur)}
+    ${photo(ctx, s.form, s.photo, '', { eager: true })}
   </div>
 </section>
 
@@ -232,6 +232,7 @@ export function servicePage(ctx, s) {
 </section>
 
 ${out}
+${s.galerie ? `<section class="section" style="padding-top:0"><div class="wrap galerie">${s.galerie.map(([k, a]) => photo(ctx, k, a)).join('')}</div></section>` : ''}
 
 <section class="section section-pierre">
   <div class="wrap">
@@ -286,7 +287,7 @@ export function professionnels(ctx) {
       <p class="muted">Vos locaux sont votre outil de travail. Nous organisons le chantier pour que votre activité continue, avec un seul interlocuteur pour tous les métiers.</p>
       <div class="btns"><a class="btn btn-p" href="${ctx.url('contact/#pro')}">Demander un devis</a>${telLink('btn btn-s')}</div>
     </div>
-    ${photo('Bureaux rénovés, espace de travail lumineux', '', 'bleu')}
+    ${photo(ctx, 'professionnels', 'Bureaux rénovés, espace ouvert et lumineux', '', { eager: true })}
   </div>
 </section>
 
@@ -347,7 +348,7 @@ export function entreprise(ctx) {
       <p class="lead">${esc(site.presentation)}</p>
       <p class="muted">L'entreprise est dirigée par ${esc(site.dirigeant)}. Son principe : un seul interlocuteur, responsable de tout le chantier.</p>
     </div>
-    ${photo("L'équipe MLS TRAVAUX sur un chantier", '', 'jaune')}
+    ${photo(ctx, 'entreprise', 'Chantier de rénovation intérieure en cours', '', { eager: true })}
   </div>
 </section>
 

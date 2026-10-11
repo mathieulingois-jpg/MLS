@@ -1,0 +1,31 @@
+# Télécharge les photos Unsplash listées dans photos/candidats.txt (le poste de travail de Claude n'a pas accès à Unsplash).
+name: Photos
+on:
+  push:
+    branches: [photos-candidats]
+    paths: [photos/candidats.txt]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  telecharger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Télécharger
+        run: |
+          mkdir -p photos/candidats
+          while read -r key id; do
+            [ -z "$id" ] && continue
+            f="photos/candidats/${key}--${id}.jpg"
+            [ -f "$f" ] && continue
+            curl -fsSL "https://images.unsplash.com/photo-${id}?w=1600&q=80&fm=jpg&fit=max" -o "$f" || echo "échec $id"
+          done < photos/candidats.txt
+          ls -la photos/candidats | head -100
+      - name: Enregistrer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add photos/candidats
+          git commit -m "Photos candidates téléchargées" || exit 0
+          git push

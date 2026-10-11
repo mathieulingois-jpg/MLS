@@ -1,6 +1,7 @@
 // Gabarit commun : <head>, en-tête, menu, pied de page.
 import { site } from './site.mjs';
 import { services } from './services.mjs';
+import { photos } from './photos.mjs';
 
 export const esc = (s) =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -28,9 +29,14 @@ const stripe = '<i class="b"></i><i class="m"></i><i class="v"></i><i class="j">
 export const stripeFull = `<div class="stripe-full" aria-hidden="true"><i style="background:var(--bleu)"></i><i style="background:var(--magenta)"></i><i style="background:var(--vert)"></i><i style="background:var(--jaune)"></i></div>`;
 export const stripeSmall = `<div class="stripe" aria-hidden="true">${stripe}</div>`;
 
-// Emplacement de photo (illustration à venir). alt = description de la future photo.
-export const photo = (alt, cls = '', couleur = '') =>
-  `<div class="ph ${couleur ? 'ph-' + couleur : ''} ${cls}" role="img" aria-label="${esc(alt)}"><span>Photo : ${esc(alt)}</span></div>`;
+// Photo d'illustration (src/photos.mjs). Sans photo disponible : emplacement gris avec la description.
+export function photo(ctx, key, alt, cls = '', { eager = false, sizes = '(max-width: 820px) 100vw, 50vw' } = {}) {
+  const d = key && photos[key];
+  if (!d) return `<div class="ph ${cls}" role="img" aria-label="${esc(alt)}"><span>Photo : ${esc(alt)}</span></div>`;
+  const src = ctx.asset(`img/photos/${key}.webp`);
+  const src800 = ctx.asset(`img/photos/${key}-800.webp`);
+  return `<div class="ph has-img ${cls}"><img src="${src800}" srcset="${src800} 800w, ${src} 1600w" sizes="${sizes}" width="${d[0]}" height="${d[1]}" alt="${esc(alt)}"${eager ? ' fetchpriority="high"' : ' loading="lazy"'} decoding="async"></div>`;
+}
 
 export const telLink = (cls = '') =>
   `<a class="${cls}" href="tel:${site.telephoneIntl}">${site.telephone}</a>`;
@@ -176,7 +182,7 @@ ${noindex ? '<meta name="robots" content="noindex, follow">' : ''}
 ${fonts}
 <link rel="stylesheet" href="${ctx.asset('css/site.css')}">
 ${ld}`;
-  const content = `${ctx.preview ? `<div class="apercu-band">Aperçu de travail : les photos grises seront remplacées par des photos, le formulaire sera branché à la mise en ligne.</div>` : ''}
+  const content = `${ctx.preview ? `<div class="apercu-band">Aperçu de travail : photos d’illustration en attendant vos photos de chantier ; le formulaire sera branché à la mise en ligne.</div>` : ''}
 <a class="skip" href="#contenu">Aller au contenu</a>
 ${header(ctx, current)}
 <main id="contenu">

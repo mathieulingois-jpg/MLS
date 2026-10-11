@@ -27,8 +27,12 @@ npm run preview    # aperçu (liens relatifs) dans preview/
 
 ## À faire avant la mise en ligne
 
-- Remplacer les emplacements gris (`photo(...)`) par des photos libres de droits puis par de vraies photos de chantier (jamais de photo d'illustration sur la page Réalisations).
+- Remplacer peu à peu les photos d'illustration (`src/photos.mjs`, `assets/img/photos/`) par de vraies photos de chantier (jamais de photo d'illustration sur la page Réalisations).
 - Créer contact@mlstravaux.fr, puis une clé Web3Forms et la coller dans `web3formsKey` (`src/site.mjs`).
 - Compléter la zone couverte par la décennale et confirmer l'hébergeur (`src/pages.mjs`, mentions légales).
 - Fichier d'origine du logo (.svg) pour un rendu plus net.
 - Page Réalisations : retirer `noindex` quand les premiers chantiers sont publiés.
+
+## Photos d'illustration
+
+Elles viennent d'Unsplash (licence gratuite, usage commercial autorisé, pas de mention obligatoire). Le poste de travail de Claude n'a pas accès à Unsplash : pour en télécharger de nouvelles, ajouter `nom identifiant` dans `photos/candidats.txt` sur la branche `photos-candidats` et pousser ; l'action GitHub « Photos » les télécharge dans `photos/candidats/`.

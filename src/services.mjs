@@ -12,7 +12,7 @@ export const services = [
     couleur: 'bleu',
     court:
       'Climatisation réversible, gainable ou multi-split pour particuliers et professionnels. Étude, installation et entretien.',
-    photo: 'Climatisation murale installée dans un séjour lumineux',
+    photo: "Climatisation murale réversible dans un séjour moderne",
     title: 'Climatisation Villefranche-sur-Saône | Installation | MLS TRAVAUX',
     description:
       'Installation de climatisation réversible, gainable et multi-split à Villefranche-sur-Saône et dans le Beaujolais. Particuliers et pros. Devis gratuit.',
@@ -113,6 +113,10 @@ export const services = [
         a: "Oui. Nous entretenons et dépannons les climatisations à Villefranche-sur-Saône, Limas, Gleizé, Anse et dans tout le Beaujolais. Un entretien régulier est conseillé pour garder un appareil performant.",
       },
     ],
+    galerie: [
+      ['climatisation-2', 'Unité intérieure de climatisation réversible fixée au mur'],
+      ['climatisation-3', 'Climatisation installée sous une charpente apparente'],
+    ],
     liens: ['electricien-villefranche-sur-saone', 'isolation-villefranche-sur-saone', 'professionnels'],
   },
 
@@ -124,7 +128,7 @@ export const services = [
     groupe: 2,
     couleur: 'vert',
     court: 'Cloisons, plafonds, doublages et faux plafonds.',
-    photo: 'Pose de plaques de plâtre sur une ossature métallique',
+    photo: "Plâtrier lissant un enduit sur un mur",
     title: 'Plâtrier Villefranche-sur-Saône | Plâtrerie | MLS TRAVAUX',
     description:
       'Plâtrier à Villefranche-sur-Saône : cloisons, doublages, faux plafonds, bandes et finitions. Plâtrerie pour particuliers et pros. Devis gratuit.',
@@ -200,7 +204,7 @@ export const services = [
     groupe: 2,
     couleur: 'vert',
     court: 'Combles, murs, isolation phonique.',
-    photo: 'Isolation des combles avec laine minérale',
+    photo: "Pose d'isolant en laine minérale entre les montants d'un mur",
     title: 'Isolation maison Villefranche-sur-Saône | MLS TRAVAUX',
     description:
       'Isolation de maison à Villefranche-sur-Saône : combles, murs par l\'intérieur, isolation phonique. Moins de dépenses, plus de confort. Devis gratuit.',
@@ -275,7 +279,7 @@ export const services = [
     groupe: 2,
     couleur: 'vert',
     court: 'Peinture intérieure, finitions soignées, revêtements muraux.',
-    photo: 'Peintre appliquant une peinture claire au rouleau',
+    photo: "Peinture d'un mur en blanc au rouleau",
     title: 'Peintre en bâtiment Villefranche-sur-Saône | MLS TRAVAUX',
     description:
       'Peintre en bâtiment à Villefranche-sur-Saône : peinture intérieure, plafonds, boiseries, locaux professionnels. Finitions soignées. Devis gratuit.',
@@ -351,7 +355,7 @@ export const services = [
     groupe: 2,
     couleur: 'magenta',
     court: 'Salles de bain, sanitaires, chauffe-eau.',
-    photo: 'Salle de bain rénovée avec douche à l\'italienne',
+    photo: "Salle de bain rénovée avec baignoire îlot et douche vitrée",
     title: 'Plombier Villefranche-sur-Saône | Salle de bain | MLS TRAVAUX',
     description:
       'Plombier à Villefranche-sur-Saône : rénovation de salle de bain, douche à l\'italienne, sanitaires, chauffe-eau. Clé en main. Devis gratuit.',
@@ -427,7 +431,7 @@ export const services = [
     groupe: 2,
     couleur: 'bleu',
     court: 'Rénovation électrique, tableau, mise aux normes.',
-    photo: 'Tableau électrique neuf et bien organisé',
+    photo: "Électricien contrôlant un tableau électrique",
     title: 'Électricien Villefranche-sur-Saône | Rénovation | MLS TRAVAUX',
     description:
       'Électricien à Villefranche-sur-Saône : rénovation électrique, tableau, mise aux normes, éclairage, borne de recharge. Particuliers et pros. Devis gratuit.',
@@ -503,7 +507,7 @@ export const services = [
     groupe: 3,
     couleur: 'jaune',
     court: 'Maison, appartement ou local : un seul interlocuteur du début à la fin.',
-    photo: 'Appartement entièrement rénové, séjour ouvert sur la cuisine',
+    photo: "Séjour entièrement rénové avec poutres apparentes",
     title: 'Rénovation maison Villefranche-sur-Saône | Clé en main | MLS',
     description:
       'Rénovation de maison et d\'appartement clé en main à Villefranche-sur-Saône et dans le Beaujolais. Tous corps d\'état, un seul interlocuteur. Devis gratuit.',
@@ -569,7 +573,7 @@ export const services = [
     groupe: 3,
     couleur: 'magenta',
     court: 'Rénovation et pose de cuisine, raccordements compris.',
-    photo: 'Cuisine moderne rénovée avec plan de travail clair',
+    photo: "Cuisine moderne rénovée avec plan de travail effet marbre",
     title: 'Rénovation cuisine Villefranche-sur-Saône | MLS TRAVAUX',
     description:
       'Rénovation et pose de cuisine à Villefranche-sur-Saône : meubles, plomberie, électricité, crédence, peinture. Un seul artisan. Devis gratuit.',
@@ -629,7 +633,7 @@ export const services = [
     groupe: 3,
     couleur: 'magenta',
     court: 'Sols, faïence, grands formats.',
-    photo: 'Pose de carrelage grand format au sol',
+    photo: "Salle de bain carrelée en grand format gris",
     title: 'Carreleur Villefranche-sur-Saône | Pose carrelage | MLS',
     description:
       'Carreleur à Villefranche-sur-Saône : pose de carrelage au sol, faïence, grands formats, salle de bain et cuisine. Finitions soignées. Devis gratuit.',
@@ -688,7 +692,7 @@ export const services = [
     groupe: 3,
     couleur: 'jaune',
     court: 'Fenêtres, portes intérieures et porte d\'entrée.',
-    photo: 'Fenêtre neuve en double vitrage posée dans une maison',
+    photo: "Grande fenêtre à petits bois ouverte sur le jardin",
     title: 'Pose fenêtres Villefranche-sur-Saône | Menuiseries | MLS',
     description:
       'Pose de fenêtres, portes intérieures et portes d\'entrée à Villefranche-sur-Saône et dans le Beaujolais. Finitions intérieures comprises. Devis gratuit.',
@@ -746,7 +750,7 @@ export const services = [
     groupe: 3,
     couleur: 'jaune',
     court: 'Installation photovoltaïque pour produire votre électricité.',
-    photo: 'Panneaux solaires sur une toiture en tuiles',
+    photo: "Maison équipée de panneaux solaires en toiture",
     title: 'Installation panneaux solaires Villefranche-sur-Saône | MLS',
     description:
       'Installation de panneaux solaires photovoltaïques à Villefranche-sur-Saône et dans le Beaujolais pour l\'autoconsommation. Étude et devis gratuits.',
