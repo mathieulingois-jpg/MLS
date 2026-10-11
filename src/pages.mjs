@@ -42,7 +42,7 @@ function carteZone(ctx) {
   const vx = X(4.7264), vy = Y(45.989);
   return `<figure class="carte">
   <svg viewBox="0 0 400 415" role="img" aria-labelledby="carte-titre">
-    <title id="carte-titre">Carte de la zone d'intervention de MLS TRAVAUX autour de Villefranche-sur-Saône : Beaujolais, Val de Saône, Ain et région lyonnaise</title>
+    <title id="carte-titre">Carte de la zone d'intervention de MLS TRAVAUX autour de Villefranche-sur-Saône : Beaujolais, Val de Saône, Ain et région Lyonnaise</title>
     <rect width="400" height="415" fill="#efedea"/>
     <path d="M0 0 H${X(4.745).toFixed(0)} L${X(4.738).toFixed(0)},${Y(46.0).toFixed(0)} L${X(4.745).toFixed(0)},${Y(45.975).toFixed(0)} L${X(4.79).toFixed(0)},${Y(45.92).toFixed(0)} L${X(4.83).toFixed(0)},${Y(45.88).toFixed(0)} L0,${Y(45.86).toFixed(0)} Z" fill="#8bc43f" opacity=".13"/>
     <path d="${path(rhone)}" fill="none" stroke="#0a72ba" stroke-width="3" opacity=".55" stroke-linecap="round"/>
@@ -50,7 +50,7 @@ function carteZone(ctx) {
     <circle cx="${vx.toFixed(1)}" cy="${vy.toFixed(1)}" r="70" fill="#0a72ba" opacity=".07"/>
     <text x="40" y="70" font-family="Cormorant Garamond, Georgia, serif" font-size="24" font-style="italic" font-weight="600" fill="#5a6266">Beaujolais</text>
     <text x="300" y="120" font-family="Cormorant Garamond, Georgia, serif" font-size="24" font-style="italic" font-weight="600" fill="#5a6266">Ain</text>
-    <text x="30" y="370" font-family="Cormorant Garamond, Georgia, serif" font-size="20" font-style="italic" font-weight="600" fill="#5a6266">Région lyonnaise</text>
+    <text x="30" y="370" font-family="Cormorant Garamond, Georgia, serif" font-size="20" font-style="italic" font-weight="600" fill="#5a6266">Région Lyonnaise</text>
     <text transform="translate(${X(4.81).toFixed(0)},${Y(45.925).toFixed(0)}) rotate(48)" font-size="10" letter-spacing="2" fill="#0a72ba" font-weight="600">LA SAÔNE</text>
     <g font-family="Figtree, Segoe UI, sans-serif">${v}
       <circle cx="${vx.toFixed(1)}" cy="${vy.toFixed(1)}" r="9" fill="#0a72ba" stroke="#fff" stroke-width="3"/>
@@ -95,7 +95,7 @@ function grilleServices(ctx) {
 export function accueil(ctx) {
   const args = [
     ['un', 'bleu', 'Un interlocuteur unique', 'Une seule personne suit votre projet, du premier rendez-vous à la remise des clés. Vous savez toujours qui appeler.'],
-    ['cle', 'jaune', 'Clés en main', 'Nous coordonnons tous les travaux et le planning. Vous retrouvez un logement ou un local prêt à vivre.'],
+    ['cle', 'jaune', 'Clés en main', 'Nous intégrons tous les métiers et gérons le planning. Vous retrouvez un logement ou un local prêt à vivre.'],
     ['metiers', 'vert', "Tous corps d'état", 'Climatisation, plâtrerie, isolation, peinture, plomberie, électricité : les métiers travaillent ensemble, sans temps mort.'],
     ['pro', 'magenta', 'Particuliers et professionnels', 'Maisons, appartements, bureaux, commerces : nous adaptons nos interventions à votre lieu de vie ou de travail.'],
   ];
@@ -112,6 +112,17 @@ ${photo(ctx, 'accueil', 'Séjour lumineux entièrement rénové', 'hero-photo', 
     <span class="eyebrow">Entreprise de rénovation · Villefranche-sur-Saône · Beaujolais</span>
     <h1>Votre interlocuteur unique pour une rénovation <em>clés en main</em></h1>
     <p class="sous">${esc(site.sousTitre)}</p>
+    <ul class="cascade" aria-label="Nos principaux métiers">${[
+      ['Climatisation', 'climatisation-villefranche-sur-saone', 'bleu'],
+      ['Chauffage · Pompe à chaleur', 'climatisation-villefranche-sur-saone', 'bleu'],
+      ['Plâtrerie', 'platrerie-villefranche-sur-saone', 'vert'],
+      ['Isolation', 'isolation-villefranche-sur-saone', 'vert'],
+      ['Peinture', 'peintre-villefranche-sur-saone', 'vert'],
+      ['Plomberie', 'plombier-villefranche-sur-saone', 'magenta'],
+      ['Électricité', 'electricien-villefranche-sur-saone', 'bleu'],
+    ]
+      .map(([n, slug, c], i) => `<li style="--i:${i}"><a href="${ctx.url(slug + '/')}"><span class="dot c-${c}"></span>${n}</a></li>`)
+      .join('')}</ul>
     <p class="intro">${esc(site.presentation)}</p>
     <div class="btns"><a class="btn btn-p" href="${ctx.url('contact/')}">Demander un devis</a>${telLink('btn btn-s').replace(site.telephone + '<', 'Appeler<')}</div>
   </div>
@@ -120,7 +131,7 @@ ${photo(ctx, 'accueil', 'Séjour lumineux entièrement rénové', 'hero-photo', 
 
 <section class="section" id="services">
   <div class="wrap">
-    <div class="sec-head center"><span class="eyebrow">Nos services</span><h2>Tous les travaux de votre rénovation</h2><p>Neuf ou rénovation, maison, appartement ou local professionnel : nous réalisons chaque métier avec nos équipes et coordonnons l'ensemble.</p></div>
+    <div class="sec-head center"><span class="eyebrow">Nos services</span><h2>Tous les travaux de votre rénovation</h2><p>Neuf ou rénovation, maison, appartement ou local professionnel : nous intégrons tous les métiers de votre chantier, avec un seul interlocuteur.</p></div>
     ${grilleServices(ctx)}
   </div>
 </section>
@@ -138,7 +149,7 @@ ${photo(ctx, 'accueil', 'Séjour lumineux entièrement rénové', 'hero-photo', 
   <div class="wrap zone">
     <div class="stack">
       <span class="eyebrow">Zone d'intervention</span>
-      <h2>Près de Villefranche-sur-Saône, dans tout le Beaujolais et la région lyonnaise</h2>
+      <h2>Près de Villefranche-sur-Saône, dans tout le Beaujolais et la région Lyonnaise</h2>
       <p class="muted">Notre siège est à Limas, à côté de Villefranche-sur-Saône. Nous intervenons chez les particuliers et les professionnels de :</p>
       <ul class="tags">${site.zoneAffichee.map((z) => `<li>${z}</li>`).join('')}</ul>
       <p class="muted">Pour les projets complexes, nous acceptons aussi les grands déplacements.</p>
@@ -253,7 +264,7 @@ ${s.galerie ? `<section class="section" style="padding-top:0"><div class="wrap g
     <div class="stack">
       <span class="eyebrow">Zone d'intervention</span>
       <h2>${esc(s.nom)} à Villefranche-sur-Saône et alentours</h2>
-      <p class="muted">Nous intervenons depuis Limas à Villefranche-sur-Saône, dans tout le Beaujolais, le Val de Saône, la région lyonnaise, le Rhône et l'Ain. Grands déplacements possibles pour les projets complexes.</p>
+      <p class="muted">Nous intervenons depuis Limas à Villefranche-sur-Saône, dans tout le Beaujolais, le Val de Saône, la région Lyonnaise, le Rhône et l'Ain. Grands déplacements possibles pour les projets complexes.</p>
     </div>
     <div class="stack">
       <span class="eyebrow">Services complémentaires</span>
@@ -319,7 +330,7 @@ export function professionnels(ctx) {
     </div>
     <div class="prose">
       <h2>Tous types de locaux</h2>
-      <p>Nous travaillons pour les entreprises, les commerçants, les professions libérales, les artisans et les gestionnaires de biens, autour de Villefranche-sur-Saône et dans la région lyonnaise.</p>
+      <p>Nous travaillons pour les entreprises, les commerçants, les professions libérales, les artisans et les gestionnaires de biens, autour de Villefranche-sur-Saône et dans la région Lyonnaise.</p>
       <p>Que vous rénoviez un plateau de bureaux, aménagiez une boutique avant son ouverture ou installiez une climatisation dans une salle d'attente, nous adaptons nos équipes et notre planning à votre activité.</p>
       <p><a class="lien-fleche" href="${ctx.url('climatisation-villefranche-sur-saone/')}">Climatisation pour les professionnels</a></p>
     </div>
@@ -374,8 +385,8 @@ export function entreprise(ctx) {
     </div>
     <div class="prose">
       <span class="eyebrow">Zone d'intervention</span>
-      <h2>Beaujolais, Val de Saône, région lyonnaise</h2>
-      <p>Depuis notre siège de Limas, nous intervenons à Villefranche-sur-Saône, dans tout le Beaujolais, le Val de Saône, la région lyonnaise, le Rhône et l'Ain. Pour les projets complexes, nous acceptons les grands déplacements.</p>
+      <h2>Beaujolais, Val de Saône, région Lyonnaise</h2>
+      <p>Depuis notre siège de Limas, nous intervenons à Villefranche-sur-Saône, dans tout le Beaujolais, le Val de Saône, la région Lyonnaise, le Rhône et l'Ain. Pour les projets complexes, nous acceptons les grands déplacements.</p>
     </div>
   </div>
 </section>
@@ -419,7 +430,7 @@ export function contact(ctx) {
   <div class="wrap stack">
     <span class="eyebrow">Contact et devis</span>
     <h1>Demandez votre devis gratuit</h1>
-    <p class="lead">Décrivez-nous votre projet de travaux à Villefranche-sur-Saône, dans le Beaujolais ou la région lyonnaise. Nous vous recontactons pour organiser une visite.</p>
+    <p class="lead">Décrivez-nous votre projet de travaux à Villefranche-sur-Saône, dans le Beaujolais ou la région Lyonnaise. Nous vous recontactons pour organiser une visite.</p>
   </div>
 </section>
 <section class="section" style="padding-top:0">

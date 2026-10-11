@@ -146,7 +146,7 @@ function footer(ctx) {
       </ul></div>
     </div>
     <div class="foot-bottom">
-      <span>© ${new Date().getFullYear()} MLS TRAVAUX, SARL · Beaujolais, région lyonnaise, Val de Saône, Rhône, Ain</span>
+      <span>© ${new Date().getFullYear()} MLS TRAVAUX, SARL · Beaujolais, région Lyonnaise, Val de Saône, Rhône, Ain</span>
       <span>Site sans cookie</span>
     </div>
   </div>

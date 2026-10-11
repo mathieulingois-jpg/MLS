@@ -300,3 +300,11 @@ fieldset.field { border: 0; padding: 0; margin: 0; }
 .galerie .ph { aspect-ratio: 3 / 2; border-radius: var(--r); }
 @media (max-width: 700px) { .galerie { grid-template-columns: 1fr; } }
 .aussi a img { width: 64px; height: 48px; object-fit: cover; border-radius: 3px; flex-shrink: 0; }
+
+/* Accueil : les métiers en cascade, sous le sous-titre */
+.cascade { list-style: none; padding: 0; margin: 6px 0 4px; display: grid; gap: 6px; justify-items: start; text-align: left; --pas: clamp(14px, 3.4vw, 34px); }
+.cascade li { margin-left: calc(var(--i) * var(--pas)); }
+.cascade a { display: inline-flex; align-items: center; gap: 12px; color: var(--papier); text-decoration: none; font: 600 clamp(1.35rem, 2.6vw, 1.75rem)/1.2 var(--f-titre); letter-spacing: .02em; padding: 2px 0; border-bottom: 1px solid transparent; }
+.cascade a:hover { color: var(--papier); border-bottom-color: var(--sur-ardoise-2); }
+.cascade .dot { width: 12px; height: 12px; }
+@media (max-width: 420px) { .cascade { --pas: 10px; } }

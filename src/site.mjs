@@ -18,8 +18,8 @@ export const site = {
   accroche: 'Votre interlocuteur unique pour une rénovation clés en main',
   sousTitre: 'Particuliers et professionnels',
   presentation:
-    "MLS TRAVAUX est une entreprise de rénovation et de travaux du bâtiment. Basés près de Villefranche-sur-Saône, nous intervenons dans tout le Beaujolais, la région lyonnaise, le Val de Saône, le Rhône et l'Ain. Climatisation, plâtrerie, isolation, peinture, plomberie, électricité : nous coordonnons tous les corps de métier de votre chantier, en neuf comme en rénovation, de la première visite à la remise des clés.",
-  zoneAffichee: ['Beaujolais', 'Région lyonnaise', 'Val de Saône', 'Rhône', 'Ain'],
+    "MLS TRAVAUX est une entreprise de rénovation et de travaux du bâtiment. Basés près de Villefranche-sur-Saône, nous intervenons dans tout le Beaujolais, la région Lyonnaise, le Val de Saône, le Rhône et l'Ain. Climatisation, chauffage et pompe à chaleur, plâtrerie, isolation, peinture, plomberie, électricité : nous intégrons tous les corps de métier de votre chantier, en neuf comme en rénovation, de la première visite à la remise des clés.",
+  zoneAffichee: ['Beaujolais', 'Région Lyonnaise', 'Val de Saône', 'Rhône', 'Ain'],
   // Communes desservies : données structurées (areaServed) + rubrique discrète de la page L'entreprise.
   communes: [
     'Villefranche-sur-Saône', 'Limas', 'Gleizé', 'Arnas', 'Anse', 'Jassans-Riottier', 'Pommiers',

@@ -71,7 +71,7 @@ export const services = [
         h2: 'Pour les professionnels',
         paras: [
           "Bureaux, commerces, cabinets, salles d'attente, locaux d'activité : un local trop chaud l'été fatigue vos équipes et fait fuir vos clients. Nous installons des climatisations adaptées aux locaux professionnels, en cassette, en gainable ou en multi-split, dans la région de Villefranche-sur-Saône et dans tout le Rhône.",
-          "Nous intervenons en site occupé, en dehors des heures d'ouverture si besoin, et nous coordonnons les autres travaux (faux plafonds, électricité, peinture) pour que vos locaux soient livrés prêts à l'emploi.",
+          "Nous intervenons en site occupé, en dehors des heures d'ouverture si besoin, et nous intégrons les autres travaux (faux plafonds, électricité, peinture) pour que vos locaux soient livrés prêts à l'emploi.",
         ],
       },
       {
@@ -134,7 +134,7 @@ export const services = [
       'Plâtrier à Villefranche-sur-Saône : cloisons, doublages, faux plafonds, bandes et finitions. Plâtrerie pour particuliers et pros. Devis gratuit.',
     h1: 'Plâtrier à Villefranche-sur-Saône',
     intro: [
-      "Plâtrier à Villefranche-sur-Saône, MLS TRAVAUX réalise vos travaux de plâtrerie dans le Beaujolais et la région lyonnaise : création de cloisons, doublage des murs, faux plafonds, réparation de plafonds abîmés. La plâtrerie est l'un de nos métiers de base, celui qui donne à une pièce des murs droits et des finitions nettes.",
+      "Plâtrier à Villefranche-sur-Saône, MLS TRAVAUX réalise vos travaux de plâtrerie dans le Beaujolais et la région Lyonnaise : création de cloisons, doublage des murs, faux plafonds, réparation de plafonds abîmés. La plâtrerie est l'un de nos métiers de base, celui qui donne à une pièce des murs droits et des finitions nettes.",
       "Nous enchaînons ensuite l'isolation et la peinture avec nos propres équipes. Vous évitez ainsi les temps morts entre deux artisans et les reprises mal raccordées.",
     ],
     prestations: {
@@ -210,7 +210,7 @@ export const services = [
       'Isolation de maison à Villefranche-sur-Saône : combles, murs par l\'intérieur, isolation phonique. Moins de dépenses, plus de confort. Devis gratuit.',
     h1: 'Isolation de maison à Villefranche-sur-Saône',
     intro: [
-      "Une bonne isolation de maison à Villefranche-sur-Saône, c'est un logement plus frais l'été, plus chaud l'hiver et des factures de chauffage qui baissent. MLS TRAVAUX isole vos combles, vos murs par l'intérieur et vos planchers, dans tout le Beaujolais et la région lyonnaise.",
+      "Une bonne isolation de maison à Villefranche-sur-Saône, c'est un logement plus frais l'été, plus chaud l'hiver et des factures de chauffage qui baissent. MLS TRAVAUX isole vos combles, vos murs par l'intérieur et vos planchers, dans tout le Beaujolais et la région Lyonnaise.",
       "L'isolation est l'un de nos grands métiers. Elle se combine naturellement avec la plâtrerie, que nous réalisons nous-mêmes : un seul chantier, une seule équipe, un résultat propre.",
     ],
     prestations: {
@@ -361,7 +361,7 @@ export const services = [
       'Plombier à Villefranche-sur-Saône : rénovation de salle de bain, douche à l\'italienne, sanitaires, chauffe-eau. Clé en main. Devis gratuit.',
     h1: 'Plombier à Villefranche-sur-Saône',
     intro: [
-      "Plombier à Villefranche-sur-Saône et à Limas, MLS TRAVAUX réalise vos travaux de plomberie et la rénovation complète de votre salle de bain dans le Beaujolais et la région lyonnaise : alimentation, évacuations, sanitaires, chauffe-eau.",
+      "Plombier à Villefranche-sur-Saône et à Limas, MLS TRAVAUX réalise vos travaux de plomberie et la rénovation complète de votre salle de bain dans le Beaujolais et la région Lyonnaise : alimentation, évacuations, sanitaires, chauffe-eau.",
       "Une salle de bain, c'est de la plomberie, mais aussi de l'électricité, de la plâtrerie hydrofuge, du carrelage et de la peinture. Nous faisons tout, ce qui vous évite de coordonner quatre artisans.",
     ],
     prestations: {
@@ -437,7 +437,7 @@ export const services = [
       'Électricien à Villefranche-sur-Saône : rénovation électrique, tableau, mise aux normes, éclairage, borne de recharge. Particuliers et pros. Devis gratuit.',
     h1: 'Électricien à Villefranche-sur-Saône',
     intro: [
-      "Électricien à Villefranche-sur-Saône, MLS TRAVAUX rénove et met aux normes les installations électriques des maisons, des appartements et des locaux professionnels, à Limas, dans le Beaujolais et dans la région lyonnaise.",
+      "Électricien à Villefranche-sur-Saône, MLS TRAVAUX rénove et met aux normes les installations électriques des maisons, des appartements et des locaux professionnels, à Limas, dans le Beaujolais et dans la région Lyonnaise.",
       "Une installation ancienne peut être dangereuse et ne supporte pas toujours les équipements d'aujourd'hui. Nous la remettons à niveau, en profitant des autres travaux pour passer les câbles proprement dans les cloisons et les plafonds.",
     ],
     prestations: {
@@ -514,7 +514,7 @@ export const services = [
     h1: 'Rénovation de maison clé en main à Villefranche-sur-Saône',
     intro: [
       "Pour la rénovation de votre maison à Villefranche-sur-Saône ou de votre appartement dans le Beaujolais, MLS TRAVAUX prend en charge l'ensemble du chantier : démolition, plâtrerie, isolation, électricité, plomberie, climatisation, carrelage, peinture, menuiseries.",
-      "Vous n'avez qu'un seul interlocuteur, un seul devis et un seul planning. Nous coordonnons tous les métiers pour que le chantier avance sans temps mort, de la première visite à la remise des clés.",
+      "Vous n'avez qu'un seul interlocuteur, un seul devis et un seul planning. Nous intégrons tous les métiers pour que le chantier avance sans temps mort, de la première visite à la remise des clés.",
     ],
     prestations: {
       titre: 'Ce que comprend une rénovation clé en main',
@@ -639,7 +639,7 @@ export const services = [
       'Carreleur à Villefranche-sur-Saône : pose de carrelage au sol, faïence, grands formats, salle de bain et cuisine. Finitions soignées. Devis gratuit.',
     h1: 'Carreleur à Villefranche-sur-Saône',
     intro: [
-      "Carreleur à Villefranche-sur-Saône, MLS TRAVAUX pose votre carrelage au sol et votre faïence murale dans les salles de bain, cuisines, séjours et locaux professionnels du Beaujolais et de la région lyonnaise.",
+      "Carreleur à Villefranche-sur-Saône, MLS TRAVAUX pose votre carrelage au sol et votre faïence murale dans les salles de bain, cuisines, séjours et locaux professionnels du Beaujolais et de la région Lyonnaise.",
       "Un beau carrelage repose sur un support plan et des coupes nettes. Nous préparons les sols, réalisons les ragréages et soignons les joints et les finitions.",
     ],
     prestations: {
