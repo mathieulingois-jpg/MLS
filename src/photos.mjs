@@ -63,6 +63,6 @@ export const photos = {
  ],
  "solaire": [
   1600,
-  901
+  1200
  ]
 };

@@ -750,7 +750,7 @@ export const services = [
     groupe: 3,
     couleur: 'jaune',
     court: 'Installation photovoltaïque pour produire votre électricité.',
-    photo: "Maison équipée de panneaux solaires en toiture",
+    photo: "Panneaux solaires posés sur un toit en tuiles",
     title: 'Installation panneaux solaires Villefranche-sur-Saône | MLS',
     description:
       'Installation de panneaux solaires photovoltaïques à Villefranche-sur-Saône et dans le Beaujolais pour l\'autoconsommation. Étude et devis gratuits.',
